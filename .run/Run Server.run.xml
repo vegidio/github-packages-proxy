@@ -1,5 +1,7 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Run Server" type="NodeJSConfigurationType" path-to-node="$PROJECT_DIR$/src/node_modules/.bin/tsx" path-to-js-file="src/server.ts" working-dir="$PROJECT_DIR$">
-    <method v="2" />
-  </configuration>
+    <configuration default="false" name="Run Server" type="NodeJSConfigurationType"
+                   path-to-node="$PROJECT_DIR$/src/node_modules/.bin/tsx" path-to-js-file="src/server.ts"
+                   working-dir="$PROJECT_DIR$">
+        <method v="2"/>
+    </configuration>
 </component>
