@@ -1,5 +1,5 @@
 import express from 'express';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 export const app = express();
 
@@ -13,18 +13,17 @@ app.get('*', async (req, res) => {
     }
 
     const response = await fetchPackage(user, token, req.path);
+    res.set(response.headers);
+    res.status(response.status);
 
-    res.contentType('application/xml');
-    res.send(response);
+    // Download the file as chunks of data, instead of saving the entire file in memory first
+    response.data.pipe(res);
 });
 
-const fetchPackage = async (user: string, token: string, path: string): Promise<string> => {
+const fetchPackage = async (user: string, token: string, path: string): Promise<AxiosResponse> => {
     const url = `https://maven.pkg.github.com/${user}/*${path}`;
-    const response = await axios.get<string>(url, {
-        headers: {
-            Authorization: `token ${token}`,
-        },
+    return await axios.get(url, {
+        headers: { Authorization: `token ${token}` },
+        responseType: 'stream',
     });
-
-    return response.data;
 };
