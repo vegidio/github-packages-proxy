@@ -22,7 +22,7 @@ app.get('*', async (req, res) => {
 
 const fetchPackage = async (user: string, token: string, path: string): Promise<AxiosResponse> => {
     const url = `https://maven.pkg.github.com/${user}/*${path}`;
-    return await axios.get(url, {
+    return axios.get(url, {
         headers: { Authorization: `token ${token}` },
         responseType: 'stream',
     });

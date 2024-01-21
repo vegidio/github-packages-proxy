@@ -9,7 +9,7 @@
         "unit": "jest",
         "lint": "eslint '*.ts' --quiet --fix",
         "compile": "tsc",
-        "test": "npm run compile && npm run unit",
+        "test": "pnpm run compile && pnpm run unit",
         "upgrade": "pnpm dlx npm-check-updates -u"
     },
     "dependencies": {

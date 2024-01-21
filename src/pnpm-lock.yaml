@@ -6,7 +6,7 @@ settings:
 
 dependencies:
   axios:
-    specifier: ^1.6.5
+    specifier: 1.6.5
     version: 1.6.5
   esbuild:
     specifier: 0.19.11
