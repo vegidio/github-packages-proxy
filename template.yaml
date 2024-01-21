@@ -9,7 +9,7 @@ Globals:
     Timeout: 3
 
 Resources:
-  Maven:
+  maven:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: src/
