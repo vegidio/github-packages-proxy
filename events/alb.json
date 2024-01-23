@@ -5,7 +5,7 @@
         }
     },
     "httpMethod": "GET",
-    "path": "/io/vinicius/sak/network/24.1.16/network-24.1.16.pom",
+    "path": "/io/vinicius/sak/network/24.1.16/network-24.1.16.aar",
     "headers": {
         "accept-encoding": "gzip",
         "accept-language": "en-US,en;q=0.9",
@@ -19,5 +19,5 @@
         "x-forwarded-proto": "http",
         "x-imforwards": "20"
     },
-    "isBase64Encoded": false
+    "isBase64Encoded": true
 }
