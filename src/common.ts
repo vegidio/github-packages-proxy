@@ -13,12 +13,15 @@ export const initRoutes = () => {
             return;
         }
 
-        const response = await fetchPackage(user, token, req.path);
-        res.set(response.headers);
-        res.status(response.status);
+        try {
+            const response = await fetchPackage(user, token, req.path);
 
-        // Download the file as chunks of data, instead of saving the entire file in memory first
-        response.data.pipe(res);
+            res.set(response.headers);
+            res.status(response.status);
+            response.data.pipe(res);
+        } catch {
+            res.send('Package not found');
+        }
     });
 };
 
